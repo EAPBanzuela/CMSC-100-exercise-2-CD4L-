@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #463F3A;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/cafe-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #2D1B0E;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    margin-left: auto;
+    margin-right: 80px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F5EBE0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active { 
+    color: #DDB892; 
+}
+
+.main-container {
+    background-color: #C6AC93;
+    width: 90%;
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 80px 60px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    
+    opacity: 0;
+    animation: glideUp 0.8s ease-out forwards;
+}
+
+.header{
+    font-size: 20px;
+    color: #58230e;
+    border-bottom: 2px solid #e9d5c0;
+}
+
+.content{
+    color: #4e2d18;
+}
+
+.content,
+.header{
+    align-self: flex-start !important;
+    opacity: 0;
+    animation: fadeInOnly 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.mern-stack,
+.java,
+.game-jam,
+.r-project {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeInOnly 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.picture-container {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    padding: 15px;             
+    background-color: #DDB892; 
+    border-radius: 25px;
+    gap: 15px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInOnly 1s ease-in forwards;
+    animation-delay: 2s;       
+}
+
+.img {
+    height: 300px;             
+    width: auto;              
+    flex-shrink: 0;           
+    border-radius: 12px;
+    opacity: 0;
+    animation: fadeInOnly 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+
+.picture-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.picture-container::-webkit-scrollbar-thumb {
+    background: #7F5539;      
+    border-radius: 10px;
+}
+
+.picture-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@keyframes glideUp {
+    from { 
+        opacity: 0; 
+        transform: 
+        translateY(60px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInOnly {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}

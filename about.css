@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #463F3A;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/cafe-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #2D1B0E;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    margin-left: auto;
+    margin-right: 80px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F5EBE0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active { 
+    color: #DDB892; 
+}
+
+.about-container {
+    background-color: #C6AC93;
+    width: 90%;
+    max-width: 950px;
+    margin: 60px 0;
+    padding: 80px 60px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    
+    opacity: 0;
+    animation: glideUp 0.8s ease-out forwards;
+}
+
+.profile-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.about-image {
+    width: 500px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
+    object-fit: cover;
+    display: block; 
+    
+    opacity: 0;
+    animation: slideIn 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.summary-text {
+    max-width: 700px;
+    line-height: 1.8;
+    color: #3B2416;
+    font-size: 1.1rem;
+    
+    opacity: 0;
+    animation: slideIn 0.8s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+.tabs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    
+    opacity: 0;
+    animation: fadeInOnly 1s ease-in forwards;
+    animation-delay: 2s;
+}
+
+@keyframes glideUp {
+    from { 
+        opacity: 0; 
+        transform: 
+        translateY(60px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0; 
+        transform: translateX(50px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0); }
+}
+
+@keyframes fadeInOnly {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+.icon-buttons { 
+    display: flex; 
+    gap: 25px; 
+}
+
+input[type="radio"] { 
+    display: none; 
+}
+
+.circle {
+    width: 85px;
+    height: 85px;
+    background-color: #F5EBE0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.circle img { 
+    width: 40px; 
+}
+
+#tab-basic:checked ~ .icon-buttons label[for="tab-basic"],
+#tab-education:checked ~ .icon-buttons label[for="tab-education"],
+#tab-skills:checked ~ .icon-buttons label[for="tab-skills"],
+#tab-interests:checked ~ .icon-buttons label[for="tab-interests"] {
+    transform: scale(1.2);
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.info-block {
+    display: none;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 50px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#tab-basic:checked ~ #basic,
+#tab-education:checked ~ #education,
+#tab-skills:checked ~ #skills,
+#tab-interests:checked ~ #interests {
+    display: block;
+    animation: quickFade 0.4s ease-out;
+}
+
+@keyframes quickFade {
+    from { 
+        opacity: 0; 
+        transform: scale(0.98); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+.info-block h3 {
+    color: #7F5539;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F5EBE0;
+}
+
+.info-block table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.info-block td { 
+    padding: 12px 0; 
+    font-size: 1.1rem; 
+}
+
+.styled-list { 
+    list-style-position: inside; 
+    line-height: 2.5; 
+}

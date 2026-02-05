@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #F5EBE0;
+    color: #463F3A;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.main-container{
+    min-height: calc(100vh - 120px);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 40px;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('images/cafe-bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.inner-image {
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    border-radius: 24px;
+    padding: 80px 70px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    box-shadow: 0 20px 50px rgba(70,63,58,0.15);
+}
+
+
+
+.header{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.brief-intro {
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    max-width: 420px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #BC8A5F; 
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    width: fit-content;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #8B5E34; 
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #6F4E37;
+}
+
+.social-footer {
+    width: 100%;
+    padding: 30px 40px;
+    background-color: #b8a99e;
+}
+
+.footer-content {
+    max-width: 1100px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-footer a {
+    text-decoration: none;
+    color: #463F3A;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.social-footer a:hover {
+    color: #BC8A5F;
+}
+
+.header,
+.brief-intro,
+.btn,
+.footer-content a{
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.header{
+    animation-delay: 0.2s;
+}
+
+.brief-intro{
+    animation-delay: 0.6s;
+}
+
+.btn{
+    animation-delay: 1s;
+}
+
+.footer-content a{
+    animation-delay: 1.4s;
+}
